@@ -1,0 +1,10 @@
+wraith-docker:
+    container_name: wraith-docker
+    build: .
+    ports:
+        - "8008:80"
+    volumes:
+        - ./:/var/www/html
+        - ./site.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      - SHELL=bash
